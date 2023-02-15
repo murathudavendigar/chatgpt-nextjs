@@ -1,3 +1,5 @@
+import SideBar from "../components/SideBar";
+import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
 
 export default function RootLayout({
@@ -9,13 +11,17 @@ export default function RootLayout({
     <html>
       <head />
       <body>
-        <div className="flex">
-          {/* Sidebar */}
+        <SessionProvider>
+          <div className="flex">
+            {/* Sidebar */}
+            <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
+              <SideBar />
+            </div>
+            {/* ClientProvider - Notification */}
 
-          {/* ClientProvider - Notification */}
-
-          <div className="bg-[#343541] flex-1">{children}</div>
-        </div>
+            <div className="bg-[#343541] flex-1">{children}</div>
+          </div>
+        </SessionProvider>
       </body>
     </html>
   );
