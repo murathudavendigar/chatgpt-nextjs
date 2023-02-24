@@ -23,8 +23,8 @@ const SideBar = () => {
     <div className="p-2 flex flex-col h-screen">
       <div className="flex-1">
         <div>
-          <NewChat />
           <div className="hidden sm:inline">
+            <NewChat />
             <ModelSelecetion />
           </div>
           <div className="flex flex-col space-y-2 my-2">
